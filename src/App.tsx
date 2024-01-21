@@ -1,11 +1,20 @@
 import './App.css'
-import { Name } from './components/Name'
+import { Routes, Route, BrowserRouter} from 'react-router-dom';
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+import { Contact } from './pages/Contact';
 
 function App() {
   return (
-    <div>
-      <Name name={"Muhaymin"}/>
-    </div>
+    <BrowserRouter>
+      <div className='app'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
